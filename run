@@ -1,0 +1,5 @@
+#!/bin/bash
+echo Running.. $1
+g++ $1 $2 $3 $4 
+./a.out
+rm ./a.out

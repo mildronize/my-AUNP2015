@@ -1,0 +1,7 @@
+#!/bin/bash
+echo linking
+gcc -Wall -c f2c.c
+gcc -Wall -c c2f.c
+gcc -Wall -c temp.c
+gcc -Wall c2f.c f2c.c temp.o -o temp
+./temp

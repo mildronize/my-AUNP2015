@@ -2,12 +2,12 @@
 #include<stdlib.h>
 #include<assert.h>
 
-int c2f(int cel_temp){
-  return cel_temp+32;
+double c2f(double temp){
+  return temp*1.8+32;
 }
-
+#ifdef MAIN
 int main(int arg, char **argv){
-  int cel, fah;
+  double cel, fah;
 
   cel = 0; fah = c2f(cel);
   assert( fah == 32 );
@@ -15,5 +15,10 @@ int main(int arg, char **argv){
   cel = 100; fah = c2f(cel);
   assert( fah == 212 );
 
+  cel = -40; fah = c2f(cel);
+  assert( fah == -40 );
+
+
   return 0;
 }
+#endif

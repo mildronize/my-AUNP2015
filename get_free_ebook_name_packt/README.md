@@ -29,11 +29,14 @@ Modify & Change time is changed by edit file
 - `date +%s` -> (timestamp) (epoch time) `1441179687`
 - `date +%Y-%m-%d` -> `2015-09-02` 
 
-# Lib C 
+## Lib C 
 - `system()` from `stdlib.h`
 - `stat()`
 
-# Trick
+## Trick
 - `man 2 stat` open manual `stat()` of C Lang
 - `man stat` open manul stat from system cmd
 - `man 2 gettimeofday`
+
+*Compare before & after*
+- `ls -l a.txt; chmod 000 a.txt; ls -l a.txt;`

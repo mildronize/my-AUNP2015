@@ -16,9 +16,9 @@ int main(int argc, char **argv){
   char *filename;
   /* struct timezone tz; */
   filename = argv[1];
+
   gettimeofday(&tv, NULL);
   printf("time of day = %ld . %ld\n", tv.tv_sec, tv.tv_usec);
-  
   printf("current time of day = %s\n", ctime(&tv.tv_sec));
   if ( !stat(filename, &buf) ){
     printf("ctime of file %s = %s\n", filename, ctime(&buf.st_mtime)); // get modify time of the file

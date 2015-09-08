@@ -13,7 +13,9 @@ int read_line_file(char *filename){
   while(1){
     char *s = fgets( buf, sizeof(buf), fp);
     if ( s == (char*)NULL )break;
-    printf("%d: %s", count, buf);
+    // line 599 is the name of free ebook what we want
+    if ( count == 599 )
+      printf("%d: %s", count, buf);
     count++;
   }
   fclose(fp);

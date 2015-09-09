@@ -1,5 +1,14 @@
 # A script for getting a name of free ebook from packtpub
 
+## Reversion
+- [2 Sep 2015][rev01] &raquo; Create a simple read time from file and converting it to readable format
+- [2 Sep 2015][rev02] &raquo; Spliting: get modify time from file & read line from file in C Lang
+- [8 Sep 2015][rev02] &raquo; stop read from the file when encounter the name of book & Write left and right trim string
+
+[rev01]: https://github.com/mildronize/AUNP2015/commit/5d68ab8a09fcab3e6b743e0697e1c3bd2f0a1325
+[rev02]: https://github.com/mildronize/AUNP2015/commit/4a5cf1a85b8d77af0bf759fb3e3f0518650448b4
+[rev03]: https://github.com/mildronize/AUNP2015/commit/f05a238abbcf52925de522539a2ebd992f39f758
+
 ## Linux Command trick
 - `sed -e '1a#include <stdlib.h>' packtpub_sys_cmd.c` means appending
   `#include <stdlib.h>` into `packtpub_sys_cmd.c` file after line 1 but not save in

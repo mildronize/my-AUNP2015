@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "packt.h"
+/* #include "packt.h" */
 
 char* read_line_file(char *filename ){
   FILE *fp;
@@ -18,9 +18,8 @@ char* read_line_file(char *filename ){
     if ( s == (char*)NULL )break;
     // line 599 is the name of free ebook what we want
     if ( count == 599 ){
-      /* out = buf; */
       /* printf("%d: %s\n\n", count, buf); */
-      /* fclose(fp); */
+      fclose(fp);
       return buf;
     }
     count++;
@@ -28,7 +27,7 @@ char* read_line_file(char *filename ){
   fclose(fp);
   return NULL;
 }
-
+#ifdef MAIN
 int main(int argc, char **argv){
   char *filename;
   char *out;
@@ -42,3 +41,4 @@ int main(int argc, char **argv){
   /* free(out); */
   return 0;
 }
+#endif

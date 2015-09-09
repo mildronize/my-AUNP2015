@@ -1,7 +1,8 @@
 #!/bin/bash
 echo linking
-gcc -Wall -c trim.c 
-gcc -Wall -c read_line_file.c 
-gcc -Wall trim.c read_line_file.o -o readline 
-./readline $1
-rm readline
+gcc -Wall -c trim.c
+gcc -Wall -c read_line_file.c
+gcc -Wall -c packtpub_sys_cmd.c
+gcc -Wall trim.c read_line_file.c packtpub_sys_cmd.o -o packtpub_sys_cmd
+./packtpub_sys_cmd $1
+rm packtpub_sys_cmd

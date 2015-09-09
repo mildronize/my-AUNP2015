@@ -8,6 +8,7 @@ char* ltrim(char *str){
   while(isspace(*str)) str++;
   return str;
 }
+
 char* rtrim(char *str){
   int len, i;
   len = strlen(str);
@@ -15,8 +16,19 @@ char* rtrim(char *str){
   str[i+1] = '\0';
   return str;
 }
+
+char* remove_end_string(char *str, char *str_rm){
+  int len, lenrm;
+  lenrm = strlen(str_rm);
+  len = strlen(str);
+  str[len-lenrm] = '\0';
+  return str;
+}
+
+#ifdef MAIN
 int main(int argc, char **argv){
   char buf[1024], res[1024], *ptr;
+  char tag[]="</h2>";
   // Test ltrim
   strcpy(buf, "  ABC");
   assert( strcmp( buf, "  ABC") == 0 );
@@ -29,7 +41,6 @@ int main(int argc, char **argv){
   printf("ltrim: %s\n", ptr);
   assert( strcmp(ptr, "ABC") == 0 );
 
-
   // Test rtrim
   strcpy(buf, "ABC  ");
   assert( strcmp( buf, "ABC  ") == 0 );
@@ -37,5 +48,16 @@ int main(int argc, char **argv){
   printf("%s\n", ptr);
   assert( strcmp(ptr, "ABC") == 0 );
 
+  // Test remove_end_string
+  strcpy(buf, "ABC x</h2>");
+  assert( strcmp( buf, "ABC x</h2>")  == 0 );
+
+  ptr = remove_end_string(buf, tag);
+  printf("%s\n", ptr);
+  assert( strcmp(ptr, "ABC x") == 0 );
+
+
+
   return 0;
 }
+#endif

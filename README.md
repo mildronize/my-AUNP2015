@@ -15,3 +15,7 @@ Advanced UNIX Network Programming 2015 Course
 ## Notes
 - `cc1` compile to assembly
 - `*.s` is a assembly code
+
+## Useful Unix Command
+- `pstree` - display a tree of processes 
+- `top` or `htop` - show all processes ars running
